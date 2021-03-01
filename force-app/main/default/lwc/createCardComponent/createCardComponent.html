@@ -1,0 +1,138 @@
+<template>
+  <lightning-button
+    variant="brand"
+    label="Normal Modal"
+    title="Primary action"
+    name="showModalOne"
+    onclick={handleClick}
+    class="slds-m-left_x-small"
+  ></lightning-button>
+  <lightning-button
+    variant="brand"
+    label="Headless Modal"
+    title="Primary action"
+    name="showModalTwo"
+    onclick={handleClick}
+    class="slds-m-left_x-small"
+  ></lightning-button>
+  <lightning-button
+    variant="brand"
+    label="Footless Modal"
+    title="Primary action"
+    name="showModalThree"
+    onclick={handleClick}
+    class="slds-m-left_x-small"
+  ></lightning-button>
+  <lightning-button
+    variant="brand"
+    label="Direction Modal"
+    title="Primary action"
+    name="showModalFour"
+    onclick={handleClick}
+    class="slds-m-left_x-small"
+  ></lightning-button>
+
+  <!--First Modal-->
+  <template if:true={showModalOne}>
+    <c-lightning-modal-component
+      title={MODAL_DATA.MODAL_ONE.heading}
+      modal-id="showModalOne"
+      oniconclose={cancelHandler}
+      size="small"
+    >
+      <div>{MODAL_DATA.MODAL_ONE.body}</div>
+      <div slot="footer">
+        <button
+          class="slds-button slds-button_neutral"
+          data-modal-id="showModalOne"
+          onclick={cancelHandler}
+        >
+          Cancel
+        </button>
+        <button
+          class="slds-button slds-button_brand"
+          onclick={handleSuccess}
+          data-modal-id="showModalOne"
+        >
+          Save
+        </button>
+      </div>
+    </c-lightning-modal-component>
+  </template>
+
+  <!--Second Modal -->
+  <template if:true={showModalTwo}>
+    <c-lightning-modal-component
+      hide-header="true"
+      modal-id="showModalTwo"
+      oniconclose={cancelHandler}
+      size="medium"
+    >
+      <div>{MODAL_DATA.MODAL_THREE.body}</div>
+      <div slot="footer">
+        <button
+          class="slds-button slds-button_neutral"
+          data-modal-id="showModalTwo"
+          onclick={cancelHandler}
+        >
+          Cancel
+        </button>
+        <button
+          class="slds-button slds-button_brand"
+          onclick={handleSuccess}
+          data-modal-id="showModalTwo"
+        >
+          Save
+        </button>
+      </div>
+    </c-lightning-modal-component>
+  </template>
+
+  <!--Third Component-->
+  <template if:true={showModalThree}>
+    <c-lightning-modal-component
+      modal-id="showModalThree"
+      oniconclose={cancelHandler}
+      title={MODAL_DATA.MODAL_TWO.heading}
+      size="large"
+    >
+      <div>{MODAL_DATA.MODAL_TWO.body}</div>
+    </c-lightning-modal-component>
+  </template>
+
+  <!--Fourth Modal-->
+  <template if:true={showModalFour}>
+    <c-lightning-modal-component
+      hide-header="true"
+      modal-id="showModalFour"
+      oniconclose={cancelHandler}
+      size="medium"
+    >
+      <div>{MODAL_DATA.MODAL_THREE.body}</div>
+      <lightning-radio-group name="radioGroup"
+                          label="Radio Group"
+                          options={options}
+                          value={value}
+                          onchange={radioHandler}
+                          type="radio"></lightning-radio-group>
+      <div slot="footer">
+        <div class="slds-modal__footer_directional">
+          <button
+            class="slds-button slds-button_neutral"
+            data-modal-id="showModalFour"
+            onclick={cancelHandler}
+          >
+            Print
+          </button>
+          <button
+            class="slds-button slds-button_brand"
+            onclick={handleSuccess}
+            data-modal-id="showModalFour"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </c-lightning-modal-component>
+  </template>
+</template>

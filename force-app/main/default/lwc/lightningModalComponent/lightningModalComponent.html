@@ -1,0 +1,39 @@
+<template>
+  <section
+    role="dialog"
+    tabindex="-1"
+    aria-labelledby={modalContentId}
+    aria-modal="true"
+    aria-describedby={modalBodyId}
+    class={modalSize}
+  >
+    <div class="slds-modal__container">
+      <template if:false={hideHeader}>
+        <header class="slds-modal__header">
+          <button
+            class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+            title="Close"
+            onclick={closeHandler}
+          >
+            <lightning-icon
+              icon-name="utility:close"
+              alternative-text="Close"
+              title="Close"
+              variant="inverse"
+            ></lightning-icon>
+          </button>
+          <h2 id={modalContentId} class="slds-modal__title slds-hyphenate">
+            {title}
+          </h2>
+        </header>
+      </template>
+      <div class="slds-modal__content slds-p-around_medium" id={modalBodyId}>
+        <slot></slot>
+      </div>
+      <footer class={footerClass}>
+        <slot name="footer" onslotchange={handleFooterSlotChange}></slot>
+      </footer>
+    </div>
+  </section>
+  <div class="slds-backdrop slds-backdrop_open"></div>
+</template>

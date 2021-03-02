@@ -1,0 +1,12 @@
+.loader::after{
+    position:absolute;
+    text-align:center;
+    width:100%;
+    font-weight:bold;
+    content:attr(data-text);
+    top: calc(50% + 2rem);
+}
+
+.inverse{
+    background-color: blueviolet;
+}

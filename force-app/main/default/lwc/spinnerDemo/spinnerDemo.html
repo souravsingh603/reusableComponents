@@ -1,0 +1,74 @@
+<template>
+
+<!--First Spinner-->
+  <lightning-card title="Reusable Spinner">
+    <lightning-button
+      label="Spinner"
+      variant="brand"
+      onclick={spinnerHandler}
+      name="showOne"
+    >
+    </lightning-button>
+    <template if:true={showOne}>
+        <c-lightning-loader
+        spinner-text = 'Hey i am loading Spinner 1'
+        variant = "brand"
+        size = "large"
+        ></c-lightning-loader>
+    </template>
+    <p>Spinner Text 1</p>
+    <p>Spinner Text 2</p>
+    <p>Spinner Text 3</p>
+    <p>Spinner Text 4</p>
+    <p>Spinner Text 5</p>
+  </lightning-card>
+
+
+  <!--Second Spinner-->
+  <lightning-card title="Reusable Spinner">
+    <lightning-button
+      label="Spinner"
+      variant="brand"
+      onclick={spinnerHandler}
+      name="showTwo"
+    >
+    </lightning-button>
+    <template if:true={showTwo}>
+        <c-lightning-loader
+        spinner-text = 'Hey i am loading spinner 2'
+        variant = "inverse"
+        size = "medium"
+        ></c-lightning-loader>
+    </template>
+    <p>Spinner Text 1</p>
+    <p>Spinner Text 2</p>
+    <p>Spinner Text 3</p>
+    <p>Spinner Text 4</p>
+    <p>Spinner Text 5</p>
+  </lightning-card>
+
+  <!--Third Spinner-->
+
+  <lightning-card title="Reusable Spinner">
+    <lightning-button
+      label="Spinner"
+      variant="brand"
+      onclick={spinnerHandler}
+      name="showThree"
+    >
+    </lightning-button>
+    <template if:true={showThree}>
+        <c-lightning-loader
+        spinner-text = 'Hey i am loading spinner 3'
+        variant = "base"
+        size = "small"
+        ></c-lightning-loader>
+    </template>
+    <p>Spinner Text 1</p>
+    <p>Spinner Text 2</p>
+    <p>Spinner Text 3</p>
+    <p>Spinner Text 4</p>
+    <p>Spinner Text 5</p>
+  </lightning-card>
+
+</template>

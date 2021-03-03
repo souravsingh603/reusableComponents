@@ -1,0 +1,10 @@
+<template>
+  <lightning-card title="Data Table styling in LWC" icon-name="custom:custom9">
+    <template if:true={tableData}>
+      <div class="myTable">
+      <lightning-datatable data={tableData} columns={columns} key-field="Id" hide-checkbox-column>
+      </lightning-datatable>
+    </div>
+    </template>
+  </lightning-card>
+</template>

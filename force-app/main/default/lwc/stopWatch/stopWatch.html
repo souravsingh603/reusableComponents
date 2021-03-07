@@ -1,0 +1,25 @@
+<template>
+  <lightning-card icon-name="custom:custom9" title="Stop Watch">
+    <div class="slds-p-around_medium">
+      <h2 class="slds-m-bottom_medium">Stop Watch</h2>
+      <div class="slds-m-around_medium">{timer}</div>
+      <lightning-button-group>
+        <lightning-button
+          label="Start"
+          onclick={actionHandler}
+          variant="Success"
+        ></lightning-button>
+        <lightning-button
+          label="Stop"
+          onclick={actionHandler}
+          variant="destructive"
+        ></lightning-button>
+        <lightning-button
+          label="Reset"
+          onclick={actionHandler}
+          variant="brand"
+        ></lightning-button>
+      </lightning-button-group>
+    </div>
+  </lightning-card>
+</template>
